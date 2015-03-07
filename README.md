@@ -19,6 +19,7 @@ npm install popsicle-limit --save
 var request = require('popsicle')
 var limit = require('popsicle-limit')
 
+// Limit request to 5000/hr.
 var requestLimit = limit(5000, limit.HOUR)
 
 request('/users.json')
