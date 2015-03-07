@@ -1,6 +1,6 @@
 {
   "name": "popsicle-limit",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Transparently handle API rate limiting with Popsicle",
   "main": "popsicle-limit.js",
   "scripts": {
