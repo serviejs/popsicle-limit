@@ -1,0 +1,47 @@
+{
+  "name": "popsicle-limit",
+  "version": "0.0.0",
+  "description": "Transparently handle API rate limiting with Popsicle",
+  "main": "popsicle-limit.js",
+  "scripts": {
+    "lint": "standard",
+    "test-spec": "mocha -R spec --bail",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec --bail",
+    "test": "npm run lint && npm run test-cov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/blakeembrey/popsicle-limit.git"
+  },
+  "keywords": [
+    "popsicle",
+    "plugin",
+    "rate",
+    "limit",
+    "api",
+    "throttle"
+  ],
+  "author": {
+    "name": "Blake Embrey",
+    "email": "hello@blakeembrey.com",
+    "url": "http://blakeembrey.me"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blakeembrey/popsicle-limit/issues"
+  },
+  "homepage": "https://github.com/blakeembrey/popsicle-limit",
+  "devDependencies": {
+    "chai": "^2.1.1",
+    "es6-promise": "^2.0.1",
+    "istanbul": "^0.3.5",
+    "mocha": "^2.0.1",
+    "nock": "^1.1.0",
+    "popsicle": "^0.4.0",
+    "pre-commit": "^1.0.6",
+    "standard": "^3.0.0-alpha"
+  },
+  "dependencies": {
+    "timetrickle": "^0.1.1"
+  }
+}
