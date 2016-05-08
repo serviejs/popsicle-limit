@@ -5,12 +5,8 @@ module.exports = popsicleLimit
 function popsicleLimit (count, duration) {
   var limit = trickle(count, duration)
 
-  return function (req) {
-    req.before(function () {
-      return new Promise(function (resolve) {
-        limit(resolve)
-      })
-    })
+  return function (req, next) {
+    return new Promise(limit).then(next)
   }
 }
 

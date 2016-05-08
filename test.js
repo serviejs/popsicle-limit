@@ -21,7 +21,7 @@ describe('popsicle limit', function () {
     var start = Date.now()
 
     function request (obj) {
-      return popsicle(obj).use(limit)
+      return popsicle.request(obj).use(limit)
     }
 
     return request(url)
