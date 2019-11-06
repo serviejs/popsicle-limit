@@ -1,7 +1,5 @@
 # Popsicle Limit
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/blakeembrey/popsicle-limit.svg)](https://greenkeeper.io/)
-
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 [![Build status][travis-image]][travis-url]
@@ -17,21 +15,12 @@ npm install popsicle-limit --save
 
 ## Usage
 
-```javascript
-var request = require('popsicle')
-var limit = require('popsicle-limit')
+```js
+import { middleware, toFetch } from "popsicle";
+import { Request } from "popsicle/dist/node";
+import { limit, HOUR } from "popsicle-limit";
 
-// Limit request to 5000/hr.
-var requestLimit = limit(5000, limit.HOUR)
-
-request('/users.json')
-  .use(requestLimit)
-
-console.log(limit.SECOND) //=> 1000
-console.log(limit.MINUTE) //=> 60000
-console.log(limit.HOUR)   //=> 3600000
-console.log(limit.DAY)    //=> 86400000
-console.log(limit.WEEK)   //=> 604800000
+const fetch = toFetch([limit(5000, HOUR), middleware], Request);
 ```
 
 ## License
@@ -42,7 +31,7 @@ MIT
 [npm-url]: https://npmjs.org/package/popsicle-limit
 [downloads-image]: https://img.shields.io/npm/dm/popsicle-limit.svg?style=flat
 [downloads-url]: https://npmjs.org/package/popsicle-limit
-[travis-image]: https://img.shields.io/travis/blakeembrey/popsicle-limit.svg?style=flat
-[travis-url]: https://travis-ci.org/blakeembrey/popsicle-limit
-[coveralls-image]: https://img.shields.io/coveralls/blakeembrey/popsicle-limit.svg?style=flat
-[coveralls-url]: https://coveralls.io/r/blakeembrey/popsicle-limit?branch=master
+[travis-image]: https://img.shields.io/travis/serviejs/popsicle-limit.svg?style=flat
+[travis-url]: https://travis-ci.org/serviejs/popsicle-limit
+[coveralls-image]: https://img.shields.io/coveralls/serviejs/popsicle-limit.svg?style=flat
+[coveralls-url]: https://coveralls.io/r/serviejs/popsicle-limit?branch=master
